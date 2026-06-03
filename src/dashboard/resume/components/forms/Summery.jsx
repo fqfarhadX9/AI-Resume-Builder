@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { ResumeInfoContext } from '@/context/ResumeInfoContext'
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import GlobalApi from './../../../../../service/GlobalApi';
 import { Brain, LoaderCircle } from 'lucide-react';
@@ -49,6 +49,9 @@ function Summery({enabledNext}) {
             toast("Details updated")
         },(error)=>{
             setLoading(false);
+            console.log(error);
+            console.log(error.response?.data);
+            toast.error("Failed to update details")
         })
     }
     return (
