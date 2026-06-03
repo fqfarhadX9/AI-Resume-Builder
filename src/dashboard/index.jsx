@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import AddResume from './components/AddResume'
 import { useUser } from '@clerk/clerk-react'
 import GlobalApi from './../../service/GlobalApi';
@@ -31,11 +31,14 @@ function Dashboard() {
       mt-10
       '>
         <AddResume/>
-        {resumeList.length>0?resumeList.map((resume,index)=>(
+        {resumeList?.length>0?resumeList.map((resume,index)=>(
           <ResumeCardItem resume={resume} key={index} refreshData={GetResumesList} />
         )):
         [1,2,3,4].map((item,index)=>(
-          <div className='h-[280px] rounded-lg bg-slate-200 animate-pulse'>
+          <div
+            key={index} 
+            className='h-[280px] rounded-lg bg-slate-200 animate-pulse'
+          >
           </div>
         ))
         }
