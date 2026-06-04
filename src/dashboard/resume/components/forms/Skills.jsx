@@ -1,5 +1,5 @@
 import { Input } from '@/components/ui/input'
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Rating } from '@smastrom/react-rating'
 
 import '@smastrom/react-rating/style.css'
@@ -21,7 +21,10 @@ function Skills() {
     const {resumeInfo,setResumeInfo}=useContext(ResumeInfoContext);
    
     useEffect(()=>{
-        resumeInfo&&setSkillsList(resumeInfo?.skills)
+        resumeInfo&&setSkillsList(Array.isArray(resumeInfo.skills)?resumeInfo.skills:[{
+            name:'',
+            rating:0
+        }])
       },[])
    
     const handleChange=(index,name,value)=>{
@@ -73,7 +76,7 @@ function Skills() {
     <p>Add Your top professional key skills</p>
 
     <div>
-        {skillsList.map((item,index)=>(
+        {skillsList?.map((item,index)=>(
             <div className='flex justify-between mb-2 border rounded-lg p-3 '>
                 <div>
                     <label className='text-xs'>Name</label>
