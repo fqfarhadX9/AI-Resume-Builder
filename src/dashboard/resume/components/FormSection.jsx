@@ -8,6 +8,7 @@ import Education from './forms/Education';
 import Skills from './forms/Skills';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import ThemeColor from './ThemeColor';
+import Project from './forms/Project';
 
 function FormSection() {
   const [activeFormIndex,setActiveFormIndex]=useState(1);
@@ -41,23 +42,18 @@ function FormSection() {
         :activeFormIndex==2?
               <Summery  enabledNext={(v)=>setEnableNext(v)} />
         :activeFormIndex==3?
-          <Experience />  
+          <Experience />
           :activeFormIndex==4?
+          <Project />
+          :activeFormIndex==5?  
           <Education/>
-          :activeFormIndex==5?
-          <Skills/>
           :activeFormIndex==6?
+          <Skills/>
+          :activeFormIndex==7?
           <Navigate to={'/my-resume/'+resumeId+"/view"}/>
               
         :null
           }
-        
-
-      {/* Experience  */}
-
-      {/* Educational Detail  */}
-
-      {/* Skills  */}
 
     </div>
   )

@@ -5,6 +5,7 @@ import SummeryPreview from './preview/SummeryPreview'
 import ExperiencePreview from './preview/ExperiencePreview'
 import EducationalPreview from './preview/EducationalPreview'
 import SkillsPreview from './preview/SkillsPreview'
+import ProjectPreview from './preview/ProjectPreview'
 
 function ResumePreview() {
 
@@ -20,9 +21,11 @@ function ResumePreview() {
         {/* Summery  */}
             <SummeryPreview resumeInfo={resumeInfo} />
         {/* Professional Experience  */}
-           {resumeInfo?.Experience?.length>0&& <ExperiencePreview resumeInfo={resumeInfo} />}
+            {resumeInfo?.Experience?.length>0&& <ExperiencePreview resumeInfo={resumeInfo} />}
+        {/* Professional Projects  */}
+           {resumeInfo?.Projects?.length>0&& <ProjectPreview resumeInfo={resumeInfo} />}
         {/* Educational  */}
-        {resumeInfo?.education?.length>0&&   <EducationalPreview resumeInfo={resumeInfo} />}
+           {resumeInfo?.education?.length>0&&   <EducationalPreview resumeInfo={resumeInfo} />}
         {/* Skilss  */}
         {resumeInfo?.skills?.length>0&&    <SkillsPreview resumeInfo={resumeInfo}/>}
     </div>
