@@ -14,11 +14,14 @@ function EducationalPreview({resumeInfo}) {
 
     {resumeInfo?.education.map((education,index)=>(
         <div key={index} className='my-5'>
-            <h2 className='text-sm font-bold'
+            <h2 className='text-sm font-bold flex justify-between'
                 style={{
                     color:resumeInfo?.themeColor
                 }}
-            >{education.universityName}</h2>
+            >
+                {education.universityName}
+                <span className='text-xs text-black font-semibold'>{education?.score} {education.scoreType==="CGPA"?"CGPA":"%"}</span>    
+            </h2>
             <h2 className='text-xs flex justify-between'>{education?.degree} in {education?.major}
             <span>{education?.startDate} - {education?.endDate}</span>
             </h2>
