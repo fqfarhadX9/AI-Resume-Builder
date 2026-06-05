@@ -9,12 +9,12 @@ import { RWebShare } from 'react-web-share'
 
 function ViewResume() {
 
-    const [resumeInfo,setResumeInfo]=useState();
-    const {resumeId}=useParams();
+    // const [resumeInfo,setResumeInfo]=useState();
+    // const {resumeId}=useParams();
 
     console.log("Header", Header);
-console.log("ResumePreview", ResumePreview);
-console.log("Button", Button);
+    console.log("ResumePreview", ResumePreview);
+    console.log("Button", Button);
 
     console.log("Resume Info:", resumeInfo);
     console.log("rewebshare", RWebShare);
@@ -39,8 +39,14 @@ console.log("Button", Button);
     // }
 
   return (
-    <>
+    <ResumeInfoContext.Provider
+      value={{
+        resumeInfo: undefined,
+        setResumeInfo: () => {},
+      }}
+    >
       <Header />
+
       <Button>Download</Button>
 
       <RWebShare
@@ -52,7 +58,7 @@ console.log("Button", Button);
       >
         <Button>Share</Button>
       </RWebShare>
-    </>
+    </ResumeInfoContext.Provider>
     // <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
     //     <div id="no-print">
     //     <Header/>
