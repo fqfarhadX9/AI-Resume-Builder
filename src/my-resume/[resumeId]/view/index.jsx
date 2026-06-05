@@ -13,6 +13,7 @@ function ViewResume() {
     const {resumeId}=useParams();
 
     console.log(resumeInfo);
+    console.log("rewebshare", RWebShare);
 
     useEffect(()=>{
         GetResumeInfo();
