@@ -1,12 +1,12 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useContext, useEffect, useState } from 'react'
-import RichTextEditor from '../RichTextEditor'
 import { ResumeInfoContext } from '@/context/ResumeInfoContext'
 import { useParams } from 'react-router-dom'
 import GlobalApi from './../../../../../service/GlobalApi'
 import { toast } from 'sonner'
 import { LoaderCircle } from 'lucide-react'
+import RichProjectTextEditor from '../RichProjectTextEditor'
 
 const formField={
     title:'',
@@ -138,8 +138,7 @@ function Project() {
                             />
                         </div>
                         <div className='col-span-2'>
-                           {/* Project Summery  */}
-                           <RichTextEditor
+                           <RichProjectTextEditor
                            index={index}
                            defaultValue={item?.projectSummery}
                            onRichTextEditorChange={(event)=>handleRichTextEditor(event,'projectSummery',index)}  />
