@@ -9,8 +9,8 @@ import { RWebShare } from 'react-web-share'
 
 function ViewResume() {
 
-    // const [resumeInfo,setResumeInfo]=useState();
-    // const {resumeId}=useParams();
+    const [resumeInfo,setResumeInfo]=useState();
+    const {resumeId}=useParams();
 
     console.log("Header", Header);
     console.log("ResumePreview", ResumePreview);
@@ -41,8 +41,8 @@ function ViewResume() {
   return (
     <ResumeInfoContext.Provider
       value={{
-        resumeInfo: undefined,
-        setResumeInfo: () => {},
+        resumeInfo,
+        setResumeInfo
       }}
     >
       <Header />
