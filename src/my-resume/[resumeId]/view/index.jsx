@@ -17,13 +17,17 @@ function ViewResume() {
     console.log("resumeId", resumeId);
 
     useEffect(()=>{
+        console.log("calling APi");
         GetResumeInfo();
     },[])
     const GetResumeInfo=()=>{
+        console.log("inside getresueInfo");
         GlobalApi.GetResumeById(resumeId).then(resp=>{
             console.log("Resume Info1:", resp.data.data);
             setResumeInfo(resp.data.data);
-        })
+        }).catch(err=>{
+        console.log("API ERROR",err);
+    });
     }
 
     const HandleDownload=()=>{
