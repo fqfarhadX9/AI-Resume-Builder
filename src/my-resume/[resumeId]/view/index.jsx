@@ -65,10 +65,10 @@ console.log("Button", Button);
             
         </div>
         <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
-        <div id="print-area" >
+            {/* <div id="print-area" >
                 <ResumePreview/>
-            </div>
-            </div>
+            </div> */}
+        </div>
     </ResumeInfoContext.Provider>
   )
 }
