@@ -12,6 +12,10 @@ function ViewResume() {
     const [resumeInfo,setResumeInfo]=useState();
     const {resumeId}=useParams();
 
+    console.log("Header", Header);
+console.log("ResumePreview", ResumePreview);
+console.log("Button", Button);
+
     console.log("Resume Info:", resumeInfo);
     console.log("rewebshare", RWebShare);
     console.log("resumeId", resumeId);
