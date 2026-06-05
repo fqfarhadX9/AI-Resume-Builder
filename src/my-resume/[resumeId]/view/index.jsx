@@ -20,19 +20,19 @@ function ViewResume() {
     console.log("rewebshare", RWebShare);
     console.log("resumeId", resumeId);
 
-    // useEffect(()=>{
-    //     console.log("calling APi");
-    //     GetResumeInfo();
-    // },[])
-    // const GetResumeInfo=()=>{
-    //     console.log("inside getresueInfo");
-    //     GlobalApi.GetResumeById(resumeId).then(resp=>{
-    //         console.log("Resume Info1:", resp.data.data);
-    //         setResumeInfo(resp.data.data);
-    //     }).catch(err=>{
-    //     console.log("API ERROR",err);
-    // });
-    // }
+    useEffect(()=>{
+        console.log("calling APi");
+        GetResumeInfo();
+    },[])
+    const GetResumeInfo=()=>{
+        console.log("inside getresueInfo");
+        GlobalApi.GetResumeById(resumeId).then(resp=>{
+            console.log("Resume Info1:", resp.data.data);
+            setResumeInfo(resp.data.data);
+        }).catch(err=>{
+        console.log("API ERROR",err);
+    });
+    }
 
     const HandleDownload=()=>{
         window.print();
@@ -73,7 +73,7 @@ function ViewResume() {
 
                  {console.log("share url", import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view")}
                
-                <RWebShare
+                {/* <RWebShare
                     data={{
                     text: "Hello Everyone, This is my resume please open url to see it",
                     url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
@@ -81,8 +81,8 @@ function ViewResume() {
                     }}
                     onClick={() => console.log("shared successfully!")}
                 > <Button>Share</Button>
-                 {console.log("share url", import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view")}
-                </RWebShare>
+                 {console.log("share url2", import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view")}
+                </RWebShare> */}
             </div>
         </div>
             
