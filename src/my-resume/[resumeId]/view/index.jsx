@@ -39,7 +39,20 @@ console.log("Button", Button);
     // }
 
   return (
-    <h1>Hello World</h1>
+    <>
+      <Header />
+      <Button>Download</Button>
+
+      <RWebShare
+        data={{
+          text: "hello",
+          url: "https://google.com",
+          title: "test",
+        }}
+      >
+        <Button>Share</Button>
+      </RWebShare>
+    </>
     // <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
     //     <div id="no-print">
     //     <Header/>
