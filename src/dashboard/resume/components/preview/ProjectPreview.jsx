@@ -36,7 +36,7 @@ function ProjectPreview({resumeInfo}) {
                     )}</span>
                 </h2>
                 </div>
-                <h2 className='text-xs flex justify-between'>{project?.technologies}, 
+                <h2 className='text-xs flex justify-between'>{project?.technologies}
                 <span>{project?.startDate} To {project?.endDate ? project.endDate : 'Present'} </span>
                 </h2>
                 
