@@ -20,56 +20,57 @@ console.log("Button", Button);
     console.log("rewebshare", RWebShare);
     console.log("resumeId", resumeId);
 
-    useEffect(()=>{
-        console.log("calling APi");
-        GetResumeInfo();
-    },[])
-    const GetResumeInfo=()=>{
-        console.log("inside getresueInfo");
-        GlobalApi.GetResumeById(resumeId).then(resp=>{
-            console.log("Resume Info1:", resp.data.data);
-            setResumeInfo(resp.data.data);
-        }).catch(err=>{
-        console.log("API ERROR",err);
-    });
-    }
+    // useEffect(()=>{
+    //     console.log("calling APi");
+    //     GetResumeInfo();
+    // },[])
+    // const GetResumeInfo=()=>{
+    //     console.log("inside getresueInfo");
+    //     GlobalApi.GetResumeById(resumeId).then(resp=>{
+    //         console.log("Resume Info1:", resp.data.data);
+    //         setResumeInfo(resp.data.data);
+    //     }).catch(err=>{
+    //     console.log("API ERROR",err);
+    // });
+    // }
 
-    const HandleDownload=()=>{
-        window.print();
-    }
+    // const HandleDownload=()=>{
+    //     window.print();
+    // }
 
   return (
-    <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
-        <div id="no-print">
-        <Header/>
+    <h1>Hello World</h1>
+    // <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
+    //     <div id="no-print">
+    //     <Header/>
 
-        <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
-            <h2 className='text-center text-2xl font-medium'>
-                Congrats! Your Ultimate AI generates Resume is ready ! </h2>
-                <p className='text-center text-gray-400'>Now you are ready to download your resume and you can share unique 
-                    resume url with your friends and family </p>
-            <div className='flex justify-between px-44 my-10'>
-                <Button onClick={HandleDownload}>Download</Button>
+    //     <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
+    //         <h2 className='text-center text-2xl font-medium'>
+    //             Congrats! Your Ultimate AI generates Resume is ready ! </h2>
+    //             <p className='text-center text-gray-400'>Now you are ready to download your resume and you can share unique 
+    //                 resume url with your friends and family </p>
+    //         <div className='flex justify-between px-44 my-10'>
+    //             <Button onClick={HandleDownload}>Download</Button>
                
-                <RWebShare
-        data={{
-          text: "Hello Everyone, This is my resume please open url to see it",
-          url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
-          title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
-        }}
-        onClick={() => console.log("shared successfully!")}
-      > <Button>Share</Button>
-      </RWebShare>
-            </div>
-        </div>
+    //             <RWebShare
+    //     data={{
+    //       text: "Hello Everyone, This is my resume please open url to see it",
+    //       url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
+    //       title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
+    //     }}
+    //     onClick={() => console.log("shared successfully!")}
+    //   > <Button>Share</Button>
+    //   </RWebShare>
+    //         </div>
+    //     </div>
             
-        </div>
-        <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
-            {/* <div id="print-area" >
-                <ResumePreview/>
-            </div> */}
-        </div>
-    </ResumeInfoContext.Provider>
+    //     </div>
+    //     <div className='my-10 mx-10 md:mx-20 lg:mx-36'>
+    //         {/* <div id="print-area" >
+    //             <ResumePreview/>
+    //         </div> */}
+    //     </div>
+    // </ResumeInfoContext.Provider>
   )
 }
 
