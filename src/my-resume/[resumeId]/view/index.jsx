@@ -70,8 +70,10 @@ function ViewResume() {
                     resume url with your friends and family </p>
             <div className='flex justify-between px-44 my-10'>
                 <Button onClick={HandleDownload}>Download</Button>
+
+                 {console.log("share url", import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view")}
                
-                <RWebShare
+                {/* <RWebShare
         data={{
           text: "Hello Everyone, This is my resume please open url to see it",
           url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
@@ -79,7 +81,7 @@ function ViewResume() {
         }}
         onClick={() => console.log("shared successfully!")}
       > <Button>Share</Button>
-      </RWebShare>
+      </RWebShare> */}
             </div>
         </div>
             
