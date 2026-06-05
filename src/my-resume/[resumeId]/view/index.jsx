@@ -12,15 +12,16 @@ function ViewResume() {
     const [resumeInfo,setResumeInfo]=useState();
     const {resumeId}=useParams();
 
-    console.log(resumeInfo);
+    console.log("Resume Info:", resumeInfo);
     console.log("rewebshare", RWebShare);
+    console.log("resumeId", resumeId);
 
     useEffect(()=>{
         GetResumeInfo();
     },[])
     const GetResumeInfo=()=>{
         GlobalApi.GetResumeById(resumeId).then(resp=>{
-            console.log(resp.data.data);
+            console.log("Resume Info1:", resp.data.data);
             setResumeInfo(resp.data.data);
         })
     }
