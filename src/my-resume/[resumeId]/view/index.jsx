@@ -59,7 +59,7 @@ function ViewResume() {
                 title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
                 })}; 
 
-                <Button onClick={() => {
+                {/* <Button onClick={() => {
                 navigator.share({
                     title: `${resumeInfo?.firstName} ${resumeInfo?.lastName} Resume`,
                     text: "Hello Everyone, This is my resume",
@@ -67,7 +67,19 @@ function ViewResume() {
                 })
                 }}>
                 Share
-                </Button>
+                </Button> */}
+
+                {resumeInfo && (
+                <RWebShare
+                    data={{
+                    text: "Hello Everyone",
+                    url: import.meta.env.VITE_BASE_URL + "/my-resume/" + resumeId + "/view",
+                    title: resumeInfo.firstName + " " + resumeInfo.lastName + " resume",
+                    }}
+                >
+                    <Button>Share</Button>
+                </RWebShare>
+                )}
                
                 {/* <RWebShare
                     data={{
