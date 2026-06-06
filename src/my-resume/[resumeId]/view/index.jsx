@@ -39,26 +39,6 @@ function ViewResume() {
     }
 
   return (
-    // <ResumeInfoContext.Provider
-    //   value={{
-    //     resumeInfo,
-    //     setResumeInfo
-    //   }}
-    // >
-    //   <Header />
-
-    //   <Button>Download</Button>
-
-    //   <RWebShare
-    //     data={{
-    //       text: "hello",
-    //       url: "https://google.com",
-    //       title: "test",
-    //     }}
-    //   >
-    //     <Button>Share</Button>
-    //   </RWebShare>
-    // </ResumeInfoContext.Provider>
     <ResumeInfoContext.Provider value={{resumeInfo,setResumeInfo}} >
         <div id="no-print">
         <Header/>
@@ -72,6 +52,22 @@ function ViewResume() {
                 <Button onClick={HandleDownload}>Download</Button>
 
                  {console.log("share url", import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view")}
+
+                {console.log({
+                text: "Hello Everyone",
+                url: import.meta.env.VITE_BASE_URL+"/my-resume/"+resumeId+"/view",
+                title: resumeInfo?.firstName+" "+resumeInfo?.lastName+" resume",
+                })}; 
+
+                <Button onClick={() => {
+                navigator.share({
+                    title: `${resumeInfo?.firstName} ${resumeInfo?.lastName} Resume`,
+                    text: "Hello Everyone, This is my resume",
+                    url: `https://ai-resume-builder-f9cf.onrender.com/my-resume/${resumeId}/view`
+                })
+                }}>
+                Share
+                </Button>
                
                 {/* <RWebShare
                     data={{
